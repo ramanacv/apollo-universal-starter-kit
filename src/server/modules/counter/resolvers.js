@@ -8,6 +8,7 @@ export default pubsub => ({
   },
   Mutation: {
     async addCount(obj, { amount }, context) {
+      console.log(context);
       await context.Count.addCount(amount);
       let count = await context.Count.getCount();
 

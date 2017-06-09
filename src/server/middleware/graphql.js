@@ -9,7 +9,7 @@ export default graphqlExpress(() => {
   try {
     return {
       schema,
-      context: modules.createContext()
+      context: Object.assign(modules.createContext(), {foo: 'bar'})
     };
   } catch (e) {
     log(e.stack);
